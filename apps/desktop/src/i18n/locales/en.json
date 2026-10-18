@@ -1,0 +1,241 @@
+{
+  "app": {
+    "name": "Scribewell"
+  },
+  "nav": {
+    "label": "Main",
+    "home": "Home",
+    "settings": "Settings"
+  },
+  "common": {
+    "continue": "Continue",
+    "back": "Back",
+    "skipForNow": "Skip for now",
+    "save": "Save",
+    "saved": "Saved",
+    "remove": "Remove",
+    "retry": "Try again",
+    "loading": "Loading…",
+    "open": "Open"
+  },
+  "errors": {
+    "codes": {
+      "io": {
+        "data_dir": "Scribewell can't write to its data folder."
+      },
+      "db": {
+        "error": "The local database reported an error.",
+        "migration_failed": "Upgrading your data failed. Nothing was changed, and a backup was kept."
+      },
+      "secrets": {
+        "unavailable": "Your system keychain isn't available, so keys can't be stored safely.",
+        "error": "Your system keychain reported an error."
+      },
+      "audio": {
+        "permission_denied": "Microphone access is turned off in your system privacy settings.",
+        "no_device": "No audio device was found. Connect a microphone or speakers and try again.",
+        "error": "The audio device couldn't be used. It may be in use by another app."
+      },
+      "net": {
+        "unreachable": "Couldn't connect. Check that the service is running and try again."
+      },
+      "internal": "Something unexpected went wrong. Details are in the log."
+    },
+    "actions": {
+      "openMicrophoneSettings": "Open privacy settings",
+      "openLogs": "Open logs folder"
+    },
+    "showDetails": "Show details"
+  },
+  "startup": {
+    "title": "Scribewell couldn't start",
+    "unknown": "An unknown error occurred during startup.",
+    "help": "Your notes have not been changed. The log folder has the full details if you want to report this."
+  },
+  "home": {
+    "morning": "Good morning",
+    "afternoon": "Good afternoon",
+    "evening": "Good evening",
+    "greetingNamed": "{{greeting}}, {{name}}",
+    "empty": {
+      "title": "No meetings yet",
+      "body": "Your meeting notes will appear here."
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "general": {
+      "title": "General",
+      "theme": "Appearance",
+      "themes": {
+        "system": "Match system",
+        "light": "Light",
+        "dark": "Dark"
+      }
+    },
+    "profile": {
+      "title": "About you",
+      "description": "Helps Scribewell write notes that fit your role. Stays on this device and is only sent to the AI provider you choose."
+    },
+    "audio": {
+      "title": "Audio",
+      "description": "Scribewell records your microphone as \"Me\" and your computer's sound as \"Them\". No bot joins your calls."
+    },
+    "ai": {
+      "title": "AI",
+      "description": "Run models on this computer with Ollama, or use your own API key with a cloud provider."
+    },
+    "data": {
+      "title": "Data and privacy",
+      "privacy": "Everything is stored on this device. Scribewell has no accounts and sends no usage data. The only network requests go to services you set up.",
+      "version": "Version",
+      "dataFolder": "Data folder",
+      "logsFolder": "Logs folder"
+    }
+  },
+  "profile": {
+    "name": "Your name",
+    "role": "Role",
+    "rolePlaceholder": "Product manager",
+    "company": "Company",
+    "about": "Anything else Scribewell should know",
+    "aboutHint": "For example the kind of meetings you have, or how you like notes written.",
+    "aboutPlaceholder": "I run customer interviews and want notes focused on problems and quotes."
+  },
+  "audio": {
+    "mic": {
+      "test": "Test microphone",
+      "listening": "Listening…",
+      "speakNow": "Say a few words.",
+      "levelLabel": "Microphone level",
+      "heard": "Heard you through {{device}}.",
+      "allZero": "The microphone delivered pure silence. Check that it isn't muted and that Scribewell is allowed to use it.",
+      "silent": "Didn't hear anything. Try speaking louder or choose another microphone."
+    },
+    "system": {
+      "test": "Play test sound",
+      "playing": "Playing…",
+      "captured": "Captured the test sound from {{device}}. Other people on your calls will be transcribed.",
+      "notCaptured": "Couldn't capture the test sound from {{device}}. Check that it isn't muted, or pick the output you use for calls."
+    },
+    "devices": {
+      "microphone": "Microphone",
+      "microphoneHint": "Your voice, labeled \"Me\".",
+      "output": "Speakers or headphones",
+      "outputHint": "Everything this device plays is captured as \"Them\".",
+      "systemDefault": "System default",
+      "systemDefaultNamed": "System default ({{name}})"
+    }
+  },
+  "ai": {
+    "provider": {
+      "legend": "Model for writing notes and answering questions",
+      "ollama": {
+        "label": "Ollama (on this computer)",
+        "description": "Private and free. Needs Ollama installed and a model downloaded."
+      },
+      "anthropic": {
+        "label": "Anthropic",
+        "description": "Claude models with your own API key."
+      },
+      "openai": {
+        "label": "OpenAI",
+        "description": "GPT models with your own API key."
+      },
+      "gemini": {
+        "label": "Google Gemini",
+        "description": "Gemini models with your own API key."
+      },
+      "openrouter": {
+        "label": "OpenRouter",
+        "description": "Many models through one API key."
+      }
+    },
+    "ollama": {
+      "checking": "Looking for Ollama…",
+      "running": "Ollama {{version}} is running",
+      "notRunning": "Ollama isn't running",
+      "notRunningHint": "Install it from ollama.com and start it, then check again. Looking at {{url}}.",
+      "noModels": "No models installed yet. Run \"ollama pull qwen3:8b\" in a terminal, then check again.",
+      "recheck": "Check again",
+      "urlLabel": "Ollama address"
+    },
+    "keys": {
+      "explainer": "Keys are stored in your system keychain and only sent to that provider. Scribewell never shows a saved key again.",
+      "storedHint": "Saved ····{{hint}}",
+      "pastePlaceholder": "Paste API key",
+      "replacePlaceholder": "Paste a new key to replace it",
+      "providers": {
+        "anthropicApiKey": {
+          "label": "Anthropic",
+          "description": "For notes and chat."
+        },
+        "openaiApiKey": {
+          "label": "OpenAI",
+          "description": "For notes and chat, and optional cloud transcription."
+        },
+        "geminiApiKey": {
+          "label": "Google Gemini",
+          "description": "For notes and chat."
+        },
+        "openrouterApiKey": {
+          "label": "OpenRouter",
+          "description": "For notes and chat."
+        },
+        "deepgramApiKey": {
+          "label": "Deepgram",
+          "description": "Optional cloud transcription."
+        },
+        "groqApiKey": {
+          "label": "Groq",
+          "description": "Optional fast cloud transcription."
+        }
+      }
+    }
+  },
+  "onboarding": {
+    "progress": "Step {{current}} of {{total}}",
+    "progressLabel": "Setup progress",
+    "welcome": {
+      "title": "Meeting notes that stay yours",
+      "body": "Jot down what matters during a call. Scribewell transcribes the conversation on your computer and turns your rough notes into clear, structured notes when the meeting ends.",
+      "start": "Get started"
+    },
+    "privacy": {
+      "title": "How Scribewell handles your data",
+      "localTitle": "Stored on this device",
+      "localBody": "Audio, transcripts and notes live in a local database. Nothing is uploaded unless you set it up.",
+      "noAccountTitle": "No account, no tracking",
+      "noAccountBody": "There's nothing to sign up for, and Scribewell sends no usage data.",
+      "aiTitle": "Your choice of AI",
+      "aiBody": "Use models on this computer, or your own API key with a provider you trust.",
+      "consentTitle": "Let people know",
+      "consentBody": "Tell the people you meet with that you're taking notes with transcription. Recording laws differ by place."
+    },
+    "microphone": {
+      "title": "Check your microphone",
+      "body": "Your side of the conversation is recorded from your microphone.",
+      "deniedSystemWide": "Microphone access is turned off for this device. Turn it on, then check again.",
+      "deniedDesktopApps": "Microphone access is on, but desktop apps aren't allowed to use it. Turn on \"Let desktop apps access your microphone\", then check again.",
+      "recheck": "Check again"
+    },
+    "systemAudio": {
+      "title": "Check your computer's sound",
+      "body": "Other people on a call are recorded from what your computer plays, so no bot needs to join. We'll play a short tone to test this.",
+      "headphones": "Headphones work best. With speakers, your microphone also picks up the other side of the call."
+    },
+    "ai": {
+      "title": "Choose an AI model",
+      "body": "Scribewell uses it to write your notes and answer questions. You can change this any time."
+    },
+    "profile": {
+      "title": "Tell Scribewell about you",
+      "body": "Optional. This helps notes match your role and the meetings you have."
+    },
+    "done": {
+      "title": "You're all set",
+      "body": "You can change any of these choices later in Settings.",
+      "finish": "Start using Scribewell"
+    }
+  }
+}

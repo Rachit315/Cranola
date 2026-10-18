@@ -11,10 +11,21 @@ default-run = "scribewell"
 tauri-build.workspace = true
 
 [dependencies]
-sw-core.workspace = true
 serde.workspace = true
 serde_json.workspace = true
+sw-audio.workspace = true
+sw-core.workspace = true
+sw-db.workspace = true
+sw-llm.workspace = true
+sw-secrets.workspace = true
 tauri.workspace = true
+tracing.workspace = true
+tracing-appender.workspace = true
+tracing-subscriber.workspace = true
+ts-rs.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
 
 [lints]
 workspace = true

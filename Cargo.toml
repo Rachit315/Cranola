@@ -10,13 +10,31 @@ repository = "https://github.com/scribewell/scribewell"
 rust-version = "1.85"
 
 [workspace.dependencies]
+sw-audio = { path = "crates/sw-audio" }
 sw-core = { path = "crates/sw-core" }
+sw-db = { path = "crates/sw-db" }
+sw-llm = { path = "crates/sw-llm" }
+sw-secrets = { path = "crates/sw-secrets" }
 
+cpal = "0.18.2"
+keyring = "4.2.0"
+# TLS is added with the cloud providers (M5); M1 only talks to Ollama on localhost.
+reqwest = { version = "0.13.5", default-features = false, features = ["json"] }
+rusqlite = { version = "0.40.2", features = ["bundled"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 tauri = { version = "2", features = [] }
 tauri-build = { version = "2", features = [] }
+tempfile = "3"
 thiserror = "2"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "time"] }
+tracing = "0.1"
+tracing-appender = "0.2.5"
+tracing-subscriber = { version = "0.3.23", features = ["json", "env-filter"] }
+ts-rs = { version = "12.0.1", features = ["serde-compat"] }
+uuid = { version = "1.28", features = ["v7"] }
+windows-registry = "0.100.0"
+wiremock = "0.6.5"
 
 [workspace.lints.rust]
 unsafe_code = "deny"

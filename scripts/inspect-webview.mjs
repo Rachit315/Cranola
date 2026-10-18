@@ -70,8 +70,12 @@ try {
       expression: expr,
       awaitPromise: true,
       returnByValue: true,
+      // Allows top-level `await` and multiple statements, like the DevTools console.
+      replMode: true,
     });
-    if (exceptionDetails) throw new Error(exceptionDetails.text);
+    if (exceptionDetails) {
+      throw new Error(exceptionDetails.exception?.description ?? exceptionDetails.text);
+    }
     return result.value;
   };
 

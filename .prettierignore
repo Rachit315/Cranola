@@ -6,3 +6,4 @@ package-lock.json
 apps/desktop/src-tauri/gen/
 apps/desktop/src-tauri/icons/
 docs/
+apps/desktop/src/ipc/generated/

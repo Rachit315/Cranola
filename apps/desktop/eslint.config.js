@@ -7,7 +7,7 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 export default defineConfig(
-  { ignores: ['dist', 'src-tauri', 'coverage'] },
+  { ignores: ['dist', 'src-tauri', 'coverage', 'src/ipc/generated'] },
   {
     files: ['**/*.{ts,tsx,js}'],
     extends: [

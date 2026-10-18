@@ -12,11 +12,9 @@ const skipBuild = process.argv.includes('--skip-build');
 // RUSTFLAGS=-D warnings turns every rustc warning into an error for build and test.
 const rustEnv = { ...process.env, RUSTFLAGS: '-D warnings' };
 
+// Rust runs first: `cargo test` regenerates the TypeScript IPC bindings
+// (ts-rs) that the frontend steps then typecheck against.
 const steps = [
-  { name: 'typescript', cmd: 'npx tsc --noEmit -p tsconfig.json', cwd: desktop },
-  { name: 'eslint', cmd: 'npx eslint . --max-warnings 0', cwd: desktop },
-  { name: 'prettier', cmd: 'npx prettier --check .', cwd: root },
-  { name: 'vitest', cmd: 'npx vitest run', cwd: desktop },
   { name: 'rustfmt', cmd: 'cargo fmt --all --check', cwd: root },
   {
     name: 'clippy',
@@ -25,6 +23,20 @@ const steps = [
     env: rustEnv,
   },
   { name: 'cargo test', cmd: 'cargo test --workspace --locked', cwd: root, env: rustEnv },
+  // In CI the committed bindings must match what the Rust types generate.
+  ...(process.env.CI
+    ? [
+        {
+          name: 'ipc bindings up to date',
+          cmd: 'git diff --exit-code -- apps/desktop/src/ipc/generated',
+          cwd: root,
+        },
+      ]
+    : []),
+  { name: 'typescript', cmd: 'npx tsc --noEmit -p tsconfig.json', cwd: desktop },
+  { name: 'eslint', cmd: 'npx eslint . --max-warnings 0', cwd: desktop },
+  { name: 'prettier', cmd: 'npx prettier --check .', cwd: root },
+  { name: 'vitest', cmd: 'npx vitest run', cwd: desktop },
   ...(skipBuild
     ? []
     : [{ name: 'tauri build', cmd: 'npx tauri build --no-bundle', cwd: desktop, env: rustEnv }]),

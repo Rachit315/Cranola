@@ -14,7 +14,7 @@ Status: draft for approval. Companion to `PRD.md` and `teardown.md`.
 | Command palette | cmdk | Accessible, unstyled. |
 | i18n | i18next + react-i18next | Standard, supports pseudo-locale. |
 | Icons | lucide-react (ISC) | Our own icon language; nothing derived from Granola. |
-| Fonts | Bundled locally (OFL): "Inter" for UI, "Newsreader" for note body | Offline, distinct from Granola's look. |
+| Fonts | Bundled locally (OFL): "Inter" for UI, "Source Serif 4" for note body | Offline, distinct from Granola's look. |
 | Database | **SQLite via rusqlite (bundled, FTS5 enabled), WAL mode** | As specified. Access lives in Rust, not via `tauri-plugin-sql`, so FTS indexing, migrations, pipelines and the UI share one consistent data layer and the webview never runs raw SQL. |
 | Audio I/O | cpal (mic everywhere; WASAPI loopback on Windows), rubato (resampling), hound (WAV), flacenc (pure-Rust FLAC for compact storage), symphonia (decode imports) | Pure Rust where possible, so no extra C toolchains beyond whisper.cpp. |
 | macOS system audio | Core Audio process tap (macOS 14.2+), ScreenCaptureKit fallback (13+) | Official Apple APIs. |
