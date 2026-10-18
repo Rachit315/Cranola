@@ -1,0 +1,21 @@
+{
+  "name": "scribewell",
+  "private": true,
+  "description": "Open-source, local-first AI notepad for meetings.",
+  "license": "MIT",
+  "workspaces": [
+    "apps/desktop"
+  ],
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "npm --workspace apps/desktop run tauri -- dev",
+    "build": "npm --workspace apps/desktop run tauri -- build",
+    "verify": "node scripts/verify.mjs",
+    "format": "prettier --write . && cargo fmt --all"
+  },
+  "devDependencies": {
+    "prettier": "3.9.10"
+  }
+}

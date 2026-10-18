@@ -1,0 +1,20 @@
+[package]
+name = "scribewell"
+description = "Scribewell desktop app"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+default-run = "scribewell"
+
+[build-dependencies]
+tauri-build.workspace = true
+
+[dependencies]
+sw-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tauri.workspace = true
+
+[lints]
+workspace = true
